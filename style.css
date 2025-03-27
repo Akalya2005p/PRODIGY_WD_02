@@ -1,0 +1,140 @@
+/* Black background with floating particles */
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: #000; /* Pure Black Background */
+    position: relative;
+}
+
+/* Floating particles */
+#particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: floatParticles linear infinite;
+}
+
+@keyframes floatParticles {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+}
+
+/* Stopwatch container with Glassmorphism */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    width: 350px;
+}
+
+/* Stopwatch title */
+.title {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* Timer display with neon glow */
+.stopwatch p {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 15px cyan, 0 0 30px cyan;
+    margin-bottom: 20px;
+}
+
+/* Stylish buttons */
+.buttons .btn {
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease-in-out;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+}
+
+/* Button colors */
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #218838);
+    border: none;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #ffc107, #e0a800);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    border: none;
+}
+
+/* Button hover effects */
+.buttons .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Laps section */
+.laps-container {
+    margin-top: 20px;
+    color: white;
+}
+
+.list-group {
+    max-height: 200px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Lap items */
+.list-group-item {
+    background: transparent;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    padding: 8px;
+    text-align: center;
+}
